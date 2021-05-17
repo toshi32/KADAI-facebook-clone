@@ -7,5 +7,5 @@
   <strong>Image:</strong>
   <%= image_tag @blog.image.url %>
 </p>
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+<%= link_to '編集する', edit_blog_path(@blog), class: "btn btn-outline-primary"  %> |
+<%= link_to '戻る', blogs_path, class: "btn btn-outline-primary"  %>
