@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-  resources :feeds
   # root 'users#new'
-  resources :blogs, only: [:create, :new]
+
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :blogs do
+  resources :blogs, only: [:create, :new]
+  resources :feeds do
     collection do
-    post :confirm
+      post :confirm
     end
   end
 end
