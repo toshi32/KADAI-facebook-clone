@@ -3,10 +3,12 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :blogs, only: [:create, :new]
-  resources :feeds do
+  resources :blogs do
     collection do
       post :confirm
+    end
+    member do
+      patch :confirm
     end
   end
 end
