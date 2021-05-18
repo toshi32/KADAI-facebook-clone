@@ -6,7 +6,7 @@
   <%= form.hidden_field :user_id, value: current_user.id %>
     <p>タイトル:<%= @blog.title %></p>
     <p>本文:<%= @blog.content %></p>
-    <p>画像:<%= image_tag @blog.image.url %></p>
+    <p>画像:<%= image_tag @blog.image.url if @blog.image? %></p>
   <%= form.submit  "登録する",  class: "btn btn-outline-primary" %>
 <%= form.submit "戻る", name: 'back', class: "btn btn-outline-primary"  %>
 <% end %>
